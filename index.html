@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hatstore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/597adb3636.js" crossorigin="anonymous"></script>
+        <!--STYLE START-->
+    <style>
+  :root{
+    --cream: #FBF7EF;
+    --cream-card: #F3ECDE;
+    --ink: #2B2620;
+    --ink-soft: #5A5347;
+    --rust: #B7472A;
+    --rust-dark: #8f3720;
+    --line: #E7DFCE;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.55;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap{
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  /* Header */
+  .page-head{
+    padding: 40px 0 8px;
+  }
+  .page-head h1{
+    font-size: 2rem;
+    margin: 0 0 10px;
+  }
+  .page-head p{
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 46ch;
+    margin: 0;
+  }
+  hr.rule{
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  /* Form section */
+  .form-title{
+    font-size: 1.3rem;
+    margin: 0 0 6px;
+  }
+  .form-sub{
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0 0 22px;
+  }
+  .field{
+    margin-bottom: 18px;
+  }
+  .field label{
+    display:block;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+  .field input,
+  .field textarea{
+    width: 100%;
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 8px;
+    padding: 11px 13px;
+    font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 0.94rem;
+    color: var(--ink);
+  }
+  .field input:focus,
+  .field textarea:focus{
+    outline: none;
+    border-color: var(--rust);
+    box-shadow: 0 0 0 3px rgba(183,71,42,0.12);
+  }
+  .field textarea{ resize: vertical; min-height: 110px; }
+  .btn-send{
+    font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--rust);
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .btn-send:hover{ background: var(--rust-dark); }
+  /* Success alert, styled like the "cara merawat" tip box */
+  .notice{
+    display:none;
+    background: var(--cream-card);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-top: 18px;
+  }
+  .notice.show{ display:block; }
+  .notice strong{ color: var(--rust); }
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 26px 0 34px;
+    text-align:center;
+    margin-top: 40px;
+  }
+  .socials{
+    display:flex;
+    justify-content:center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .socials a{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--cream-card);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: var(--ink);
+  }
+  footer .copy{
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+  @media (max-width: 480px){
+    .contact-grid{ grid-template-columns: 1fr; }
+    .nav-links{ gap: 14px; font-size: 0.85rem; }
+  }
+    </style>
+<!--STYLE END-->
+  </head>
+  <body>
+    <div class="container" style="background: var(--cream); border: 2px solid var(--line); border-radius: 8px; min-height: 100vh; margin: 1rem auto;">
+
+
+<!--NAVBAR START-->
+<section id="Beranda">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">Hatstore</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link active" aria-current="page" href="#Beranda">Beranda</a>
+        <a class="nav-link" href="produk.html">Produk</a>
+        <a class="nav-link" href="tentang.html">Tentang</a>
+        <a class="nav-link" href="kontak.html">Kontak</a>
+      </div>
+    </div>
+  </div>
+</nav>
+</section>
+<!--NAVBAR END-->
+
+<!--CAROUSEL START-->
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://drive.google.com/thumbnail?id=1PwG5vf5M63uuD3haG0gHD0uMdGLgV0L7&sz=w2000" class="img-fluid w-60 mx-auto d-block" style="height: 500px; object-fit: cover;" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://drive.google.com/thumbnail?id=1rNsTA0NPhVz_VGo5DVEyDyjtsJj0k2UY&sz=w2000" class="img-fluid w-60 mx-auto d-block" style="height: 500px; object-fit: cover;" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://drive.google.com/thumbnail?id=1CfKqQn8m1oGhFT57mv8h-7TqkqZ383FE&sz=w2000" class="img-fluid w-60 mx-auto d-block" style="height: 500px; object-fit: cover;" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!--CAROUSEL END-->
+
+<!--TEXT1 START-->
+<div class="p-3">
+    <h3 class="fw-bold">Topi bucket premium</h3>
+    <h6 class="text-danger">Rp 149.000</h6>
+    <p class="small text-secondary">
+        Dibuat dari bahan katun pilihan yang adem dan tahan lama,
+        cocok dipakai sehari-hari maupun untuk gaya kasual.
+        Tersedia dalam beberapa warna dan ukuran, dengan
+        jahitan rapi dan desain yang nyaman di kepala.
+    </p>
+</div>
+<!--TEXT1 END-->
+
+<!--GUTTERS(IMAGE) START-->
+<div class="container-fluid ps-2">
+  <div class="d-flex gap-2">
+
+    <button type="button"
+            class="p-0 border border-2 border-secondary rounded"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0">
+      <img src="https://drive.google.com/thumbnail?id=1PwG5vf5M63uuD3haG0gHD0uMdGLgV0L7&sz=w2000"
+           style="width: 60px; height: 60px; object-fit: cover;"
+           class="rounded">
+    </button>
+    <button type="button"
+            class="p-0 border border-2 border-secondary rounded"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1">
+      <img src="https://drive.google.com/thumbnail?id=1rNsTA0NPhVz_VGo5DVEyDyjtsJj0k2UY&sz=w2000"
+           style="width: 60px; height: 60px; object-fit: cover;"
+           class="rounded">
+    </button>
+    <button type="button"
+            class="p-0 border border-2 border-secondary rounded"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2">
+      <img src="https://drive.google.com/thumbnail?id=1CfKqQn8m1oGhFT57mv8h-7TqkqZ383FE&sz=w2000"
+           style="width: 60px; height: 60px; object-fit: cover;"
+           class="rounded">
+    </button>
+  </div> 
+</div>
+<!--GUTTERS(IMAGE) END-->
+
+<!--GUTTERS (TEXT) START-->
+<div class="p-3">
+    <h5 class="fw-bold">Detail produk</h5>
+</div>
+
+<div class="container">
+ <div class="row g-2">
+
+  <div class="col-6">
+   <div class="p-2">
+    <div class="d-flex gap-2">
+     <i class="fa-solid fa-shirt text-secondary"></i>
+      <div>
+        <h6 class="mb-0">Bahan katun</h6>
+        <p class="small text-secondary mb-0">
+                    100% katun bull denim,
+                    ringan dan menyerap keringat.
+        </p>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-6">
+   <div class="p-2">
+    <div class="d-flex gap-2">
+     <i class="fa-solid fa-rotate text-secondary"></i>
+      <div>
+        <h6 class="mb-0">Reversible</h6>
+        <p class="small text-secondary mb-0">
+            Bisa dipakai dua sisi
+            untuk dua tampilan berbeda.
+        </p>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-6">
+   <div class="p-2">
+    <div class="d-flex gap-2">
+     <i class="fa-solid fa-ruler text-secondary"></i>
+      <div>
+        <h6 class="mb-0">Ukuran M-XL</h6>
+        <p class="small text-secondary mb-0">
+            Lingkar kepala 56-60 cm,
+            ada tali pengatur di dalam.
+        </p>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-6">
+   <div class="p-2">
+    <div class="d-flex gap-2">
+     <i class="fa-solid fa-star text-secondary"></i>
+      <div>
+        <h6 class="mb-0">3 pilihan warna</h6>
+        <p class="small text-secondary mb-0">
+            Terracotta, sage,
+            dan dusty blue - cocok dipadukan.
+        </p>
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</section>
+<!--GUTTERS (TEXT) END-->
+
+<!--TABLE START-->
+<table class="table">
+  <thead class="table-info">
+    <tr>
+      <th scope="col">Ukuran</th>
+      <th scope="col">Lingkar Kepala</th>
+      <th scope="col">Cocok untuk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">M</th>
+      <td>56-57 cm</td>
+      <td>Kepala kecil-sedang</td>
+    </tr>
+    <tr>
+      <th scope="row">L</th>
+      <td>58-59 cm</td>
+      <td>Kepala sedang</td>
+    </tr>
+    <tr>
+      <th scope="row">XL</th>
+      <td>60 cm</td>
+      <td>Kepala besar</td>
+    </tr>
+  </tbody>
+</table>
+<!--TABLE END-->
+
+<!-- ALERT START-->
+<div class="alert alert-warning" role="alert">
+    <strong>Cara merawat:</strong>
+        Cuci tangan dengan air dingin,
+        jangan diperas terlalu keras,
+        jemur di tempat teduh agar warna tidak pudar.
+        Setrika suhu rendah bila perlu.
+</div>
+<!-- ALERT END-->
+
+<!-- FOOTER START -->
+<footer>
+    <div class="socials">
+        <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    <div class="copy">© 2026 Hatstore. Dibuat dengan bahan pilihan.</div>
+</footer>
+<!-- FOOTER END -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+   </div>
+  </body>
+</html>
